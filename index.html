@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pearl One</title>
+<meta name="description" content="Pearl One is an experimental, camera-free collar that records a cat's movement and flags seizure-like events. Built for Pearl, tested on one cat so far.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<!--BODY-->
+<header class="top wrap">
+  <a class="wordmark" href="./">Pearl One</a>
+  <a class="top-mail" href="mailto:hello@pearlone.app">hello@pearlone.app</a>
+</header>
+
+<main>
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <figure class="trace">
+      <div class="trace-frame">
+        <canvas id="trace" role="img" aria-label="Pearl's collar motion over 95 seconds on October 2, 2026. The line is flat while she rests, then breaks into large bursts during a seizure. A marker at 4:21:39 PM shows where the collar flagged it."></canvas>
+        <div class="trace-flag" id="trace-flag"><span class="trace-flag-time">4:21:39 PM</span> <span>the collar flags it</span></div>
+      </div>
+      <div class="trace-axis" aria-hidden="true">
+        <span style="left:2.1%">4:21:00</span>
+        <span style="left:33.7%">4:21:30</span>
+        <span style="left:65.3%">4:22:00</span>
+        <span style="left:96.8%">4:22:30</span>
+      </div>
+      <figcaption>Ninety-five seconds from Pearl's collar on October 2, 2026. The flat stretch is Pearl at rest. Everything after it is a seizure.</figcaption>
+    </figure>
+
+    <div class="col">
+      <h1 id="hero-title">Pearl's seizures don't wait for someone to be watching.</h1>
+      <p class="lede">Pearl One is a prototype collar I built after my cat, Pearl, started having seizures. It records how she moves and sends an alert to my phone when that movement looks like one of her past seizures. There's no camera involved. It has been tested on one cat so far: Pearl.</p>
+    </div>
+  </section>
+
+  <section class="band wrap" aria-labelledby="pearl-title">
+    <div class="col">
+      <h2 id="pearl-title">About Pearl</h2>
+      <p>Pearl has seizures. They arrive without warning, at any hour, and often in clusters. For a long time the only record I had was my own memory of what I'd seen, and the seizures I didn't see left no record at all.</p>
+      <p>Today she's on medication and doing well. Her vet manages her treatment; the collar hasn't been used to make medical decisions. She has gone almost two weeks without a seizure as I write this, but because they come in clusters, I'm still watching.</p>
+    </div>
+    <figure class="photo photo-portrait">
+      <div class="placeholder" role="img" aria-label="Photo placeholder">Photo to come: Pearl</div>
+    </figure>
+  </section>
+
+  <section class="band wrap" aria-labelledby="collar-title">
+    <div class="col">
+      <h2 id="collar-title">What she wears</h2>
+      <p>A camera only sees what's in frame. A collar goes where the cat goes. Pearl One is a small motion sensor in a 3D-printed case on an ordinary collar. When Pearl's movement looks like one of her past seizures, it sends an alert to my phone.</p>
+      <p>It also keeps an honest record. If any part of a recording is missing, the record says so instead of quietly papering over it.</p>
+    </div>
+    <div class="photo-pair">
+      <figure class="photo">
+        <div class="placeholder" role="img" aria-label="Photo placeholder">Photo to come: Pearl wearing the collar</div>
+      </figure>
+      <figure class="photo">
+        <div class="placeholder" role="img" aria-label="Photo placeholder">Photo to come: the three printed cases</div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band wrap" aria-labelledby="proof-title">
+    <div class="col">
+      <h2 id="proof-title">October 2, 4:21 in the afternoon</h2>
+      <p>This is the clearest case I have. I was in the room, the home camera was recording, and Pearl was wearing the collar.</p>
+    </div>
+
+    <div class="proof">
+      <div class="gate" id="gate">
+        <div class="gate-cover" id="gate-cover">
+          <p class="gate-title">Real video of a seizure</p>
+          <p>The clip shows Pearl having a seizure on our home camera. It's short, and the sound is off, but some people will find it upsetting. The timeline beside it tells the same story without the video.</p>
+          <button type="button" class="gate-button" id="gate-show">Show video</button>
+        </div>
+        <div class="gate-player" id="gate-player" hidden>
+          <video id="gate-video" controls muted playsinline preload="none" data-src="media/cs004-public.mp4"></video>
+          <p class="gate-missing" id="gate-missing" hidden>The clip hasn't been added yet.</p>
+          <button type="button" class="gate-button gate-hide" id="gate-hide">Hide video</button>
+        </div>
+      </div>
+
+      <ol class="timeline">
+        <li><time>4:21:25 PM</time><span>On the home camera, Pearl's movement changes.</span></li>
+        <li class="is-flag"><time>4:21:39 PM</time><span>The collar flags the motion. The alert it sends names this same second.</span></li>
+        <li><time>4:21:40 PM</time><span>I tap "seizure" in the app.</span></li>
+        <li><time>4:22:27 PM</time><span>I mark the end of the seizure.</span></li>
+      </ol>
+    </div>
+
+    <div class="col">
+      <p>Four separate records agree on 4:21:39: the camera's clock, a second recording of that clock, the collar's own data, and the alert. Nothing the collar recorded in that session was lost. The full case, with the original files, is available to partners on request.</p>
+    </div>
+  </section>
+
+  <section class="band wrap" aria-labelledby="record-title">
+    <div class="col">
+      <h2 id="record-title">The record so far</h2>
+      <table class="record">
+        <tbody>
+          <tr><th scope="row">8</th><td>seizures captured on the collar between September 15 and October 13, 2026, each confirmed by me</td></tr>
+          <tr><th scope="row">7</th><td>of those eight have a record of me reporting that the alert worked</td></tr>
+          <tr><th scope="row">1</th><td>false alert confirmed: Pearl scratching, on October 7</td></tr>
+          <tr><th scope="row">473+</th><td>hours of motion recorded across 80 sessions on 32 days</td></tr>
+        </tbody>
+      </table>
+      <p>Every session reports how complete it is. Gaps, recoveries and incomplete sessions stay in the record instead of being cleaned out, and early failures are kept because they shaped how the system works now.</p>
+    </div>
+  </section>
+
+  <section class="band wrap" aria-labelledby="limits-title">
+    <div class="col">
+      <h2 id="limits-title">What this doesn't show yet</h2>
+      <ul class="limits">
+        <li>It's one cat. Nothing here says how it would work for another.</li>
+        <li>Pearl One isn't a medical device. It doesn't diagnose, treat, prevent or predict anything.</li>
+        <li>The numbers above are counts from one household, not accuracy rates.</li>
+        <li>The hardware is a prototype. Comfort, battery life and safety for everyday use still need proper testing.</li>
+        <li>No vet or researcher has reviewed this work yet. That's the next step.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band wrap" aria-labelledby="next-title">
+    <div class="col">
+      <h2 id="next-title">What comes next</h2>
+      <p>The next step is a pilot with a second cat in another home, run without a camera, with the rules set before it starts and an independent review at the end. I'm looking for:</p>
+      <ul class="asks">
+        <li>veterinary and research partners who work with feline seizures</li>
+        <li>funding for that pilot and a sturdier version of the collar</li>
+        <li>people who have taken a small hardware product from prototype to shelf</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band wrap" aria-labelledby="who-title">
+    <div class="col who">
+      <h2 id="who-title">Who's building this</h2>
+      <p>I'm Tim Pearce, Pearl's person. I've spent fifteen years building technology systems in hospitality, most recently as an enterprise architect. I built Pearl One in my own time because I wanted a record of what was happening to her when I wasn't looking.</p>
+    </div>
+  </section>
+
+  <section class="contact wrap" aria-labelledby="contact-title">
+    <div class="col">
+      <h2 id="contact-title">Get in touch</h2>
+      <p>If you work with cats, seizures, research or small hardware and this interests you, I'd like to hear from you.</p>
+      <p class="mail-row">
+        <a class="mail" href="mailto:hello@pearlone.app" id="mail">hello@pearlone.app</a>
+        <button type="button" class="copy" id="copy">Copy address</button>
+        <span class="copy-status" id="copy-status" role="status"></span>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <p>Pearl One is an experimental prototype, not a medical device. © 2026 Tim Pearce.</p>
+</footer>
+<!--/BODY-->
+<script src="assets/site.js"></script>
+</body>
+</html>
