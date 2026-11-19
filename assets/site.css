@@ -102,6 +102,9 @@ main { display: grid; gap: 0; }
   background: var(--shell); border: 1px dashed var(--hair); color: var(--slate); font-size: 1rem;
 }
 .photo-portrait .placeholder { aspect-ratio: 4 / 5; }
+.photo img { width: 100%; height: auto; border-radius: 4px; background: var(--shell); }
+.photo figcaption { margin-top: 0.4rem; color: var(--slate); font-size: 0.9rem; }
+.photo-wide { max-width: 44rem; }
 
 /* Proof: gated clip beside the timeline */
 .proof { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; max-width: 64rem; }
