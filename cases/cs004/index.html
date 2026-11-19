@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CS-004 · Pearl One</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Case CS-004: one owner-witnessed seizure with video, synchronized collar motion and an actual alert record.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<!--BODY-->
+<header class="top wrap">
+  <a class="wordmark" href="../../">Pearl One</a>
+  <a class="top-mail" href="mailto:hello@pearlone.app">hello@pearlone.app</a>
+</header>
+
+<main class="case">
+  <section class="wrap case-head" aria-labelledby="case-title">
+    <p class="case-tag">Owner-confirmed seizure, case CS-004</p>
+    <h1 id="case-title">Video, collar motion, and an actual alert record</h1>
+    <p class="case-sub">Pearl, October 2, 2026</p>
+    <p class="case-align">The Ring event clock is corroborated by a separate Ring playback time-reference recording. The collar replay and the exact-session alert details independently converge on 4:21:39–4:21:39.994 PM; the phone image confirms the alert was displayed. Delivery latency is not inferred.</p>
+    <dl class="case-stats">
+      <div><dt>Classification</dt><dd>Owner-witnessed seizure</dd></div>
+      <div><dt>Capture integrity</dt><dd>3,096,082 / 3,096,082</dd></div>
+      <div><dt>Video</dt><dd>Two preserved Ring clips</dd></div>
+      <div><dt>Clock chain</dt><dd>Ring + collar + exact-session alert</dd></div>
+    </dl>
+  </section>
+
+  <section class="wrap stage" aria-label="Video and collar motion on one timeline">
+    <div class="stage-media">
+      <div class="panel-head">
+        <h2>Video and displayed time</h2>
+        <p>1:35 presentation cut from preserved originals</p>
+      </div>
+
+      <div class="gate" id="gate">
+        <div class="gate-cover" id="gate-cover">
+          <p class="gate-title">Real video of a seizure</p>
+          <p>Ring footage of Pearl having a seizure, about a minute and a half, with no sound. Some people will find it upsetting. The clock, charts and timeline on this page all work without it.</p>
+          <button type="button" class="gate-button" id="gate-show">Show video</button>
+        </div>
+        <div class="gate-player" id="gate-player" hidden>
+          <video id="case-video" playsinline muted preload="none" data-src="../../media/october-2.mp4" aria-label="Ring clips A and B, combined"></video>
+          <p class="gate-missing" id="gate-missing" hidden>The video couldn't be loaded.</p>
+          <div class="gate-row">
+            <span class="gate-label">Ring clips A and B, combined, sound removed</span>
+            <button type="button" class="gate-button" id="gate-hide">Hide video</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="clock-row">
+        <div>
+          <p class="clock-label">Displayed timeline</p>
+          <p class="clock" id="clock">4:20:58.000 PM EDT</p>
+        </div>
+        <p class="relative" id="relative">+0.000 s / 1:35</p>
+      </div>
+      <div class="transport">
+        <button type="button" class="play" id="play">Play</button>
+        <label class="visually-hidden" for="seek">Timeline position</label>
+        <input id="seek" type="range" min="0" max="95" step="0.05" value="0">
+      </div>
+      <div class="events" id="events"></div>
+    </div>
+
+    <div class="stage-signal">
+      <div class="panel-head">
+        <h2>Collar motion</h2>
+        <p>The dashed cursor follows the shared timeline</p>
+      </div>
+      <figure class="chart">
+        <figcaption><strong>Motion summary</strong> <span>1-second bins, collar clock</span></figcaption>
+        <canvas id="motion" role="img" aria-label="Collar motion summary for the 95-second window, quiet at first and then large sustained activity during the seizure"></canvas>
+        <p class="legend"><span class="key key-1"></span>Rotation <span class="key key-2"></span>Acceleration variation <span class="key key-flag"></span>Collar flag</p>
+      </figure>
+      <figure class="chart">
+        <figcaption><strong>Acceleration on three axes</strong> <span>4 seconds either side of the cursor</span></figcaption>
+        <canvas id="raw" role="img" aria-label="Acceleration on three axes around the current cursor position"></canvas>
+        <p class="legend"><span class="key key-x"></span>X <span class="key key-y"></span>Y <span class="key key-z"></span>Z</p>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap evidence" aria-label="Timestamps and clock evidence">
+    <div class="ledger-panel">
+      <h2>What each timestamp means</h2>
+      <dl class="ledger">
+        <div class="is-accent"><dt>4:21:25 PM</dt><dd>Visible movement landmark on the Ring event clock</dd></div>
+        <div class="is-accent"><dt>4:21:39 PM</dt><dd>Alert details name this exact recording session and Pearl's source event second</dd></div>
+        <div class="is-accent"><dt>4:21:39.994 PM</dt><dd>Collar flag replayed from the finalized collar recording</dd></div>
+        <div><dt>4:21:40.589 PM</dt><dd>First live owner SEIZURE tap; a caregiving mark, not adjudicated onset</dd></div>
+        <div><dt>4:22:01.012 PM</dt><dd>Second live owner tap within the same episode; not a second seizure</dd></div>
+        <div><dt>4:22:27.590 PM</dt><dd>Owner post-ictal mark</dd></div>
+      </dl>
+    </div>
+
+    <div class="alert-panel">
+      <h2>Camera, session, and phone proof</h2>
+      <p><strong>Four preserved sources converge on the same event window.</strong> Ring event footage shows the episode clock; the separate Ring playback recording corroborates that clock's progression; the finalized collar replay produces 4:21:39.994; and the alert details name this exact session and 4:21:39 PM. The phone image confirms the alert appeared, without claiming a measured network or delivery latency.</p>
+      <div class="proof-grid">
+        <figure>
+          <img src="../../media/camera-clock.jpg" alt="Frame from the Ring playback time-reference recording showing the event timeline at 4:22:14 PM" width="1200" height="554" loading="lazy">
+          <figcaption>Independent Ring playback reference: 4:22:14 PM</figcaption>
+        </figure>
+        <figure>
+          <img src="../../media/alert-details.jpg" alt="Alert details: Pearl experimental motion alert, high priority, from Pearl One on 10/2/26 at 4:21:39 PM" width="1149" height="340" loading="lazy">
+          <figcaption>Exact-session alert details: 4:21:39 PM</figcaption>
+        </figure>
+        <figure>
+          <img src="../../media/alert-phone.jpg" alt="Phone lock screen at 4:24 PM on Friday, October 2, with the Pearl experimental alert showing 3m ago" width="1110" height="585" loading="lazy">
+          <figcaption>Phone display: alert visible at 4:24 PM</figcaption>
+        </figure>
+        <figure>
+          <video controls muted playsinline preload="none" src="../../media/camera-clock-reference.mp4" aria-label="Separate Ring playback time-reference recording"></video>
+          <figcaption>Playable source: Ring clock progression 4:21:06–4:22:14 PM</figcaption>
+        </figure>
+      </div>
+      <p class="redaction-note">Device names, session identifiers and the alert's message body are blurred or cropped in the images above.</p>
+    </div>
+  </section>
+
+  <section class="wrap provenance">
+    <div class="col">
+      <h2>What this case supports</h2>
+      <p class="strong">This is the strongest matched case: one owner-witnessed natural episode with complete collar capture, timestamped Ring footage, a separate Ring clock reference, owner marks, a reproducible collar flag, and exact-session notification evidence. It does not establish medical performance, sensitivity, specificity, prediction, diagnosis, measured delivery latency, or cross-animal performance.</p>
+    </div>
+    <div class="col">
+      <h2>Preserved originals and derived display</h2>
+      <p>Byte-preserved Ring clips, separate Ring time-reference recording, and phone images; the finalized collar recording and its recovery report; owner confirmation and video catalog; read-only display derivatives. Source media and raw samples remain unchanged. Original files are available to qualified partners on request.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <p>Pearl One is an experimental prototype, not a medical device. <a href="../../">Back to Pearl One</a>.</p>
+</footer>
+<!--/BODY-->
+<script src="data.js"></script>
+<script src="../../assets/case.js"></script>
+</body>
+</html>
