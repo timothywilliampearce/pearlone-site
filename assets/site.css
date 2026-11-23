@@ -1,3 +1,4 @@
+/* "Lexend" is loaded for the digits 0-9 only (plain zero); all other text falls through to Atkinson. */
 /* Layout: one left-aligned reading column, written in Tim's voice; the collar's own motion trace runs full width as the one bold element. */
 :root {
   --pearl: #ebeeee;   /* page */
@@ -9,7 +10,7 @@
   --series-1: #16232a; /* chart line 1 / X */
   --series-2: #3b7d8a; /* chart line 2 / Y */
   --series-3: #b0566b; /* Z */
-  --face: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --face: "Lexend", "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
   --step-0: 1.1875rem;
   --step-1: 1.5rem;
   --step-2: 2rem;
